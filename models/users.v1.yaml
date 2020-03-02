@@ -1,0 +1,52 @@
+title: User
+type: object
+description: ''
+properties:
+  uuid:
+    type: string
+    description: unique identifayer for the user
+    format: uuid
+  username:
+    type: string
+  password:
+    type: string
+    format: password
+  email:
+    type: string
+  isEmailVerified:
+    type: boolean
+    default: false
+  roles:
+    type: array
+    description: 'the permissions of the user like admin, vendor, customer'
+    items:
+      type: string
+  isEnabled:
+    type: boolean
+    default: true
+    description: for active/ not active user
+  isAccountNotExpired:
+    type: boolean
+    default: true
+    description: for future expiration date
+  isAccountNonLocked:
+    type: boolean
+    default: true
+    description: for blocking multiple enteries to the user
+  version:
+    type: number
+  createDate:
+    type: string
+    format: date-time
+  lastModifiedDate:
+    type: string
+    format: date-time
+required:
+  - uuid
+  - username
+  - password
+  - email
+  - roles
+  - version
+  - createDate
+  - lastModifiedDate
